@@ -1,0 +1,45 @@
+[ObNbzJLfQWaafS83U5b9lg][deals][2]
+ 108ms BooleanQuery #ConstantScore(vehicle.state:UNBUILT) #ConstantScore(pricing.type:CASH pricing.type:PCH pricing.type:PCP) #*:* #(((#ConstantScore(pricing.type:PCP) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]) (#ConstantScore(pricing.type:PCH) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]))~1)
+  35ms ConstantScoreQuery ConstantScore(vehicle.state:UNBUILT)
+   35ms TermQuery vehicle.state:UNBUILT
+  3ms ConstantScoreQuery ConstantScore(pricing.type:CASH pricing.type:PCH pricing.type:PCP)
+   3ms BooleanQuery pricing.type:CASH pricing.type:PCH pricing.type:PCP
+    0ms TermQuery pricing.type:CASH
+    0ms TermQuery pricing.type:PCH
+    0ms TermQuery pricing.type:PCP
+  26ms MatchAllDocsQuery *:*
+  31ms BooleanQuery ((#ConstantScore(pricing.type:PCP) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]) (#ConstantScore(pricing.type:PCH) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]))~1
+   0ms BooleanQuery #ConstantScore(pricing.type:PCP) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]
+    0ms ConstantScoreQuery ConstantScore(pricing.type:PCP)
+     0ms TermQuery pricing.type:PCP
+    0ms ConstantScoreQuery ConstantScore(pricing.price.timescale:MONTH)
+     0ms TermQuery pricing.price.timescale:MONTH
+    0ms IndexOrDocValuesQuery pricing.price.value:[0 TO 250000]
+   5ms BooleanQuery #ConstantScore(pricing.type:PCH) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]
+    0ms ConstantScoreQuery ConstantScore(pricing.type:PCH)
+     0ms TermQuery pricing.type:PCH
+    1ms ConstantScoreQuery ConstantScore(pricing.price.timescale:MONTH)
+     1ms TermQuery pricing.price.timescale:MONTH
+    0ms IndexOrDocValuesQuery pricing.price.value:[0 TO 250000]
+ 397ms CancellableCollector search_cancelled
+  365ms MultiCollector search_multi
+   34ms CollapsingTopDocsCollector search_top_hits
+   271ms MultiBucketCollector: [[term_agg_body_type, term_agg_brand_slug, term_agg_feature, term_agg_fuel_category, term_agg_fuel_hybrid_type, term_agg_transmission_category, term_agg_seats, collapsed_total]] aggregation
+ 0ms rewrite
+
+ 69ms GlobalOrdinalsStringTermsAggregator term_agg_body_type
+  23ms CardinalityAggregator uniq_by
+ 66ms GlobalOrdinalsStringTermsAggregator term_agg_brand_slug
+  27ms CardinalityAggregator uniq_by
+ 256ms GlobalOrdinalsStringTermsAggregator term_agg_feature
+  181ms CardinalityAggregator uniq_by
+ 62ms GlobalOrdinalsStringTermsAggregator term_agg_fuel_category
+  23ms CardinalityAggregator uniq_by
+ 33ms GlobalOrdinalsStringTermsAggregator term_agg_fuel_hybrid_type
+  4ms CardinalityAggregator uniq_by
+ 55ms GlobalOrdinalsStringTermsAggregator term_agg_transmission_category
+  22ms CardinalityAggregator uniq_by
+ 61ms LongTermsAggregator term_agg_seats
+  22ms CardinalityAggregator uniq_by
+ 28ms CardinalityAggregator collapsed_total
+

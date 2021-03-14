@@ -1,0 +1,32 @@
+[ObNbzJLfQWaafS83U5b9lg][deals][2]
+ 108ms BooleanQuery #ConstantScore(vehicle.state:UNBUILT) #ConstantScore(pricing.type:CASH pricing.type:PCH pricing.type:PCP) #*:* #(((#ConstantScore(pricing.type:PCP) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]) (#ConstantScore(pricing.type:PCH) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]))~1) (106ms next_doc 1ms build_scorer)
+  35ms ConstantScoreQuery ConstantScore(vehicle.state:UNBUILT) (34ms advance)
+   35ms TermQuery vehicle.state:UNBUILT (34ms advance)
+  3ms ConstantScoreQuery ConstantScore(pricing.type:CASH pricing.type:PCH pricing.type:PCP) (1ms next_doc 2ms advance)
+   3ms BooleanQuery pricing.type:CASH pricing.type:PCH pricing.type:PCP (1ms next_doc 2ms advance)
+  26ms MatchAllDocsQuery *:* (26ms advance)
+  31ms BooleanQuery ((#ConstantScore(pricing.type:PCP) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]) (#ConstantScore(pricing.type:PCH) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]))~1 (27ms next_doc 3ms advance)
+   5ms BooleanQuery #ConstantScore(pricing.type:PCH) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000] (1ms next_doc 3ms advance)
+    1ms ConstantScoreQuery ConstantScore(pricing.price.timescale:MONTH) (1ms advance)
+     1ms TermQuery pricing.price.timescale:MONTH (1ms advance)
+ 397ms CancellableCollector search_cancelled
+  365ms MultiCollector search_multi
+   34ms CollapsingTopDocsCollector search_top_hits
+   271ms MultiBucketCollector: [[term_agg_body_type, term_agg_brand_slug, term_agg_feature, term_agg_fuel_category, term_agg_fuel_hybrid_type, term_agg_transmission_category, term_agg_seats, collapsed_total]] aggregation
+
+ 69ms GlobalOrdinalsStringTermsAggregator term_agg_body_type (14ms build_aggregation 55ms collect)
+  23ms CardinalityAggregator uniq_by (22ms collect)
+ 66ms GlobalOrdinalsStringTermsAggregator term_agg_brand_slug (18ms build_aggregation 47ms collect)
+  27ms CardinalityAggregator uniq_by (1ms build_aggregation 25ms collect)
+ 256ms GlobalOrdinalsStringTermsAggregator term_agg_feature (118ms build_aggregation 137ms collect)
+  181ms CardinalityAggregator uniq_by (178ms collect 3ms collect_count)
+ 62ms GlobalOrdinalsStringTermsAggregator term_agg_fuel_category (14ms build_aggregation 47ms collect)
+  23ms CardinalityAggregator uniq_by (22ms collect)
+ 33ms GlobalOrdinalsStringTermsAggregator term_agg_fuel_hybrid_type (3ms build_aggregation 29ms collect)
+  4ms CardinalityAggregator uniq_by (4ms collect)
+ 55ms GlobalOrdinalsStringTermsAggregator term_agg_transmission_category (13ms build_aggregation 41ms collect)
+  22ms CardinalityAggregator uniq_by (22ms collect)
+ 61ms LongTermsAggregator term_agg_seats (14ms build_aggregation 47ms collect)
+  22ms CardinalityAggregator uniq_by (22ms collect)
+ 28ms CardinalityAggregator collapsed_total (28ms collect)
+

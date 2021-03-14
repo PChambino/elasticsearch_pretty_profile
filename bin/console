@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "elasticsearch_pretty_profile"
+require "pry"
+
+Pry.start

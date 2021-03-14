@@ -1,0 +1,14 @@
+[ObNbzJLfQWaafS83U5b9lg][deals][2]
+ 108ms BooleanQuery #ConstantScore(vehicle.state:UNBUILT) #ConstantScore(pricing.type:CASH pricing.type:PCH pricing.type:PCP) #*:* #(((#ConstantScore(pricing.type:PCP) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]) (#ConstantScore(pricing.type:PCH) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]))~1) (106ms next_doc)
+ 397ms CancellableCollector search_cancelled
+  365ms MultiCollector search_multi
+   271ms MultiBucketCollector: [[term_agg_body_type, term_agg_brand_slug, term_agg_feature, term_agg_fuel_category, term_agg_fuel_hybrid_type, term_agg_transmission_category, term_agg_seats, collapsed_total]] aggregation
+
+ 69ms GlobalOrdinalsStringTermsAggregator term_agg_body_type (55ms collect)
+ 66ms GlobalOrdinalsStringTermsAggregator term_agg_brand_slug
+ 256ms GlobalOrdinalsStringTermsAggregator term_agg_feature (118ms build_aggregation 137ms collect)
+  181ms CardinalityAggregator uniq_by (178ms collect)
+ 62ms GlobalOrdinalsStringTermsAggregator term_agg_fuel_category
+ 55ms GlobalOrdinalsStringTermsAggregator term_agg_transmission_category
+ 61ms LongTermsAggregator term_agg_seats
+

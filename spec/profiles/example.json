@@ -1,0 +1,723 @@
+{
+  "profile": {
+    "shards": [
+      {
+        "id": "[ObNbzJLfQWaafS83U5b9lg][deals][2]",
+        "searches": [
+          {
+            "query": [
+              {
+                "type": "BooleanQuery",
+                "description": "#ConstantScore(vehicle.state:UNBUILT) #ConstantScore(pricing.type:CASH pricing.type:PCH pricing.type:PCP) #*:* #(((#ConstantScore(pricing.type:PCP) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]) (#ConstantScore(pricing.type:PCH) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]))~1)",
+                "time_in_nanos": 108713264,
+                "breakdown": {
+                  "score": 0,
+                  "build_scorer_count": 35,
+                  "match_count": 604,
+                  "create_weight": 37712,
+                  "next_doc": 106555629,
+                  "match": 204047,
+                  "create_weight_count": 1,
+                  "next_doc_count": 539083,
+                  "score_count": 0,
+                  "build_scorer": 1283185,
+                  "advance": 92956,
+                  "advance_count": 12
+                },
+                "children": [
+                  {
+                    "type": "ConstantScoreQuery",
+                    "description": "ConstantScore(vehicle.state:UNBUILT)",
+                    "time_in_nanos": 35118744,
+                    "breakdown": {
+                      "score": 0,
+                      "build_scorer_count": 47,
+                      "match_count": 0,
+                      "create_weight": 3754,
+                      "next_doc": 46797,
+                      "match": 0,
+                      "create_weight_count": 1,
+                      "next_doc_count": 1079,
+                      "score_count": 0,
+                      "build_scorer": 162528,
+                      "advance": 34359922,
+                      "advance_count": 544616
+                    },
+                    "children": [
+                      {
+                        "type": "TermQuery",
+                        "description": "vehicle.state:UNBUILT",
+                        "time_in_nanos": 35094589,
+                        "breakdown": {
+                          "score": 0,
+                          "build_scorer_count": 47,
+                          "match_count": 0,
+                          "create_weight": 799,
+                          "next_doc": 46797,
+                          "match": 0,
+                          "create_weight_count": 1,
+                          "next_doc_count": 1079,
+                          "score_count": 0,
+                          "build_scorer": 141328,
+                          "advance": 34359922,
+                          "advance_count": 544616
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ConstantScoreQuery",
+                    "description": "ConstantScore(pricing.type:CASH pricing.type:PCH pricing.type:PCP)",
+                    "time_in_nanos": 3809758,
+                    "breakdown": {
+                      "score": 0,
+                      "build_scorer_count": 45,
+                      "match_count": 0,
+                      "create_weight": 5082,
+                      "next_doc": 1365096,
+                      "match": 0,
+                      "create_weight_count": 1,
+                      "next_doc_count": 8530,
+                      "score_count": 0,
+                      "build_scorer": 208370,
+                      "advance": 2190577,
+                      "advance_count": 32057
+                    },
+                    "children": [
+                      {
+                        "type": "BooleanQuery",
+                        "description": "pricing.type:CASH pricing.type:PCH pricing.type:PCP",
+                        "time_in_nanos": 3776598,
+                        "breakdown": {
+                          "score": 0,
+                          "build_scorer_count": 33,
+                          "match_count": 0,
+                          "create_weight": 4012,
+                          "next_doc": 1365096,
+                          "match": 0,
+                          "create_weight_count": 1,
+                          "next_doc_count": 8530,
+                          "score_count": 0,
+                          "build_scorer": 176292,
+                          "advance": 2190577,
+                          "advance_count": 32057
+                        },
+                        "children": [
+                          {
+                            "type": "TermQuery",
+                            "description": "pricing.type:CASH",
+                            "time_in_nanos": 83188,
+                            "breakdown": {
+                              "score": 0,
+                              "build_scorer_count": 25,
+                              "match_count": 0,
+                              "create_weight": 104,
+                              "next_doc": 0,
+                              "match": 0,
+                              "create_weight_count": 1,
+                              "next_doc_count": 0,
+                              "score_count": 0,
+                              "build_scorer": 51325,
+                              "advance": 31324,
+                              "advance_count": 409
+                            }
+                          },
+                          {
+                            "type": "TermQuery",
+                            "description": "pricing.type:PCH",
+                            "time_in_nanos": 966605,
+                            "breakdown": {
+                              "score": 0,
+                              "build_scorer_count": 33,
+                              "match_count": 0,
+                              "create_weight": 85,
+                              "next_doc": 510491,
+                              "match": 0,
+                              "create_weight_count": 1,
+                              "next_doc_count": 8530,
+                              "score_count": 0,
+                              "build_scorer": 24793,
+                              "advance": 415305,
+                              "advance_count": 7367
+                            }
+                          },
+                          {
+                            "type": "TermQuery",
+                            "description": "pricing.type:PCP",
+                            "time_in_nanos": 30490,
+                            "breakdown": {
+                              "score": 0,
+                              "build_scorer_count": 25,
+                              "match_count": 0,
+                              "create_weight": 78,
+                              "next_doc": 0,
+                              "match": 0,
+                              "create_weight_count": 1,
+                              "next_doc_count": 0,
+                              "score_count": 0,
+                              "build_scorer": 24387,
+                              "advance": 5975,
+                              "advance_count": 24
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "MatchAllDocsQuery",
+                    "description": "*:*",
+                    "time_in_nanos": 26907971,
+                    "breakdown": {
+                      "score": 0,
+                      "build_scorer_count": 45,
+                      "match_count": 0,
+                      "create_weight": 639,
+                      "next_doc": 0,
+                      "match": 0,
+                      "create_weight_count": 1,
+                      "next_doc_count": 0,
+                      "score_count": 0,
+                      "build_scorer": 10899,
+                      "advance": 26357292,
+                      "advance_count": 539095
+                    }
+                  },
+                  {
+                    "type": "BooleanQuery",
+                    "description": "((#ConstantScore(pricing.type:PCP) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]) (#ConstantScore(pricing.type:PCH) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]))~1",
+                    "time_in_nanos": 31868668,
+                    "breakdown": {
+                      "score": 0,
+                      "build_scorer_count": 45,
+                      "match_count": 604,
+                      "create_weight": 14021,
+                      "next_doc": 27626025,
+                      "match": 68162,
+                      "create_weight_count": 1,
+                      "next_doc_count": 529474,
+                      "score_count": 0,
+                      "build_scorer": 570211,
+                      "advance": 3031035,
+                      "advance_count": 29090
+                    },
+                    "children": [
+                      {
+                        "type": "BooleanQuery",
+                        "description": "#ConstantScore(pricing.type:PCP) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]",
+                        "time_in_nanos": 270390,
+                        "breakdown": {
+                          "score": 0,
+                          "build_scorer_count": 25,
+                          "match_count": 3,
+                          "create_weight": 6463,
+                          "next_doc": 1381,
+                          "match": 1724,
+                          "create_weight_count": 1,
+                          "next_doc_count": 1,
+                          "score_count": 0,
+                          "build_scorer": 227102,
+                          "advance": 33680,
+                          "advance_count": 10
+                        },
+                        "children": [
+                          {
+                            "type": "ConstantScoreQuery",
+                            "description": "ConstantScore(pricing.type:PCP)",
+                            "time_in_nanos": 38243,
+                            "breakdown": {
+                              "score": 0,
+                              "build_scorer_count": 25,
+                              "match_count": 0,
+                              "create_weight": 1185,
+                              "next_doc": 113,
+                              "match": 0,
+                              "create_weight_count": 1,
+                              "next_doc_count": 1,
+                              "score_count": 0,
+                              "build_scorer": 28223,
+                              "advance": 8667,
+                              "advance_count": 28
+                            },
+                            "children": [
+                              {
+                                "type": "TermQuery",
+                                "description": "pricing.type:PCP",
+                                "time_in_nanos": 32804,
+                                "breakdown": {
+                                  "score": 0,
+                                  "build_scorer_count": 25,
+                                  "match_count": 0,
+                                  "create_weight": 112,
+                                  "next_doc": 113,
+                                  "match": 0,
+                                  "create_weight_count": 1,
+                                  "next_doc_count": 1,
+                                  "score_count": 0,
+                                  "build_scorer": 23857,
+                                  "advance": 8667,
+                                  "advance_count": 28
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ConstantScoreQuery",
+                            "description": "ConstantScore(pricing.price.timescale:MONTH)",
+                            "time_in_nanos": 44357,
+                            "breakdown": {
+                              "score": 0,
+                              "build_scorer_count": 19,
+                              "match_count": 0,
+                              "create_weight": 1383,
+                              "next_doc": 0,
+                              "match": 0,
+                              "create_weight_count": 1,
+                              "next_doc_count": 0,
+                              "score_count": 0,
+                              "build_scorer": 24097,
+                              "advance": 18833,
+                              "advance_count": 24
+                            },
+                            "children": [
+                              {
+                                "type": "TermQuery",
+                                "description": "pricing.price.timescale:MONTH",
+                                "time_in_nanos": 40232,
+                                "breakdown": {
+                                  "score": 0,
+                                  "build_scorer_count": 19,
+                                  "match_count": 0,
+                                  "create_weight": 282,
+                                  "next_doc": 0,
+                                  "match": 0,
+                                  "create_weight_count": 1,
+                                  "next_doc_count": 0,
+                                  "score_count": 0,
+                                  "build_scorer": 21073,
+                                  "advance": 18833,
+                                  "advance_count": 24
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "IndexOrDocValuesQuery",
+                            "description": "pricing.price.value:[0 TO 250000]",
+                            "time_in_nanos": 143847,
+                            "breakdown": {
+                              "score": 0,
+                              "build_scorer_count": 12,
+                              "match_count": 3,
+                              "create_weight": 682,
+                              "next_doc": 0,
+                              "match": 827,
+                              "create_weight_count": 1,
+                              "next_doc_count": 0,
+                              "score_count": 0,
+                              "build_scorer": 141285,
+                              "advance": 1026,
+                              "advance_count": 11
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "BooleanQuery",
+                        "description": "#ConstantScore(pricing.type:PCH) #ConstantScore(pricing.price.timescale:MONTH) #pricing.price.value:[0 TO 250000]",
+                        "time_in_nanos": 5339393,
+                        "breakdown": {
+                          "score": 0,
+                          "build_scorer_count": 33,
+                          "match_count": 0,
+                          "create_weight": 5324,
+                          "next_doc": 1095060,
+                          "match": 0,
+                          "create_weight_count": 1,
+                          "next_doc_count": 5762,
+                          "score_count": 0,
+                          "build_scorer": 291254,
+                          "advance": 3931610,
+                          "advance_count": 10349
+                        },
+                        "children": [
+                          {
+                            "type": "ConstantScoreQuery",
+                            "description": "ConstantScore(pricing.type:PCH)",
+                            "time_in_nanos": 981913,
+                            "breakdown": {
+                              "score": 0,
+                              "build_scorer_count": 33,
+                              "match_count": 0,
+                              "create_weight": 1098,
+                              "next_doc": 292748,
+                              "match": 0,
+                              "create_weight_count": 1,
+                              "next_doc_count": 5762,
+                              "score_count": 0,
+                              "build_scorer": 28544,
+                              "advance": 643378,
+                              "advance_count": 10349
+                            },
+                            "children": [
+                              {
+                                "type": "TermQuery",
+                                "description": "pricing.type:PCH",
+                                "time_in_nanos": 975718,
+                                "breakdown": {
+                                  "score": 0,
+                                  "build_scorer_count": 33,
+                                  "match_count": 0,
+                                  "create_weight": 83,
+                                  "next_doc": 292748,
+                                  "match": 0,
+                                  "create_weight_count": 1,
+                                  "next_doc_count": 5762,
+                                  "score_count": 0,
+                                  "build_scorer": 23364,
+                                  "advance": 643378,
+                                  "advance_count": 10349
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "ConstantScoreQuery",
+                            "description": "ConstantScore(pricing.price.timescale:MONTH)",
+                            "time_in_nanos": 1120635,
+                            "breakdown": {
+                              "score": 0,
+                              "build_scorer_count": 24,
+                              "match_count": 0,
+                              "create_weight": 1189,
+                              "next_doc": 0,
+                              "match": 0,
+                              "create_weight_count": 1,
+                              "next_doc_count": 0,
+                              "score_count": 0,
+                              "build_scorer": 23419,
+                              "advance": 1079891,
+                              "advance_count": 16111
+                            },
+                            "children": [
+                              {
+                                "type": "TermQuery",
+                                "description": "pricing.price.timescale:MONTH",
+                                "time_in_nanos": 1116147,
+                                "breakdown": {
+                                  "score": 0,
+                                  "build_scorer_count": 24,
+                                  "match_count": 0,
+                                  "create_weight": 277,
+                                  "next_doc": 0,
+                                  "match": 0,
+                                  "create_weight_count": 1,
+                                  "next_doc_count": 0,
+                                  "score_count": 0,
+                                  "build_scorer": 19843,
+                                  "advance": 1079891,
+                                  "advance_count": 16111
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "IndexOrDocValuesQuery",
+                            "description": "pricing.price.value:[0 TO 250000]",
+                            "time_in_nanos": 970755,
+                            "breakdown": {
+                              "score": 0,
+                              "build_scorer_count": 24,
+                              "match_count": 0,
+                              "create_weight": 131,
+                              "next_doc": 0,
+                              "match": 0,
+                              "create_weight_count": 1,
+                              "next_doc_count": 0,
+                              "score_count": 0,
+                              "build_scorer": 181959,
+                              "advance": 772529,
+                              "advance_count": 16111
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "rewrite_time": 44478,
+            "collector": [
+              {
+                "name": "CancellableCollector",
+                "reason": "search_cancelled",
+                "time_in_nanos": 397315132,
+                "children": [
+                  {
+                    "name": "MultiCollector",
+                    "reason": "search_multi",
+                    "time_in_nanos": 365230227,
+                    "children": [
+                      {
+                        "name": "CollapsingTopDocsCollector",
+                        "reason": "search_top_hits",
+                        "time_in_nanos": 34717214
+                      },
+                      {
+                        "name": "MultiBucketCollector: [[term_agg_body_type, term_agg_brand_slug, term_agg_feature, term_agg_fuel_category, term_agg_fuel_hybrid_type, term_agg_transmission_category, term_agg_seats, collapsed_total]]",
+                        "reason": "aggregation",
+                        "time_in_nanos": 271267423
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "aggregations": [
+          {
+            "type": "GlobalOrdinalsStringTermsAggregator",
+            "description": "term_agg_body_type",
+            "time_in_nanos": 69861680,
+            "breakdown": {
+              "reduce": 0,
+              "build_aggregation": 14297477,
+              "build_aggregation_count": 1,
+              "initialize": 48539,
+              "initialize_count": 1,
+              "reduce_count": 0,
+              "collect": 55113910,
+              "collect_count": 401752
+            },
+            "children": [
+              {
+                "type": "CardinalityAggregator",
+                "description": "uniq_by",
+                "time_in_nanos": 23404027,
+                "breakdown": {
+                  "reduce": 0,
+                  "build_aggregation": 230192,
+                  "build_aggregation_count": 8,
+                  "initialize": 875,
+                  "initialize_count": 1,
+                  "reduce_count": 0,
+                  "collect": 22783200,
+                  "collect_count": 389751
+                }
+              }
+            ]
+          },
+          {
+            "type": "GlobalOrdinalsStringTermsAggregator",
+            "description": "term_agg_brand_slug",
+            "time_in_nanos": 66180171,
+            "breakdown": {
+              "reduce": 0,
+              "build_aggregation": 18363706,
+              "build_aggregation_count": 1,
+              "initialize": 3190,
+              "initialize_count": 1,
+              "reduce_count": 0,
+              "collect": 47411521,
+              "collect_count": 401752
+            },
+            "children": [
+              {
+                "type": "CardinalityAggregator",
+                "description": "uniq_by",
+                "time_in_nanos": 27274017,
+                "breakdown": {
+                  "reduce": 0,
+                  "build_aggregation": 1421765,
+                  "build_aggregation_count": 36,
+                  "initialize": 136,
+                  "initialize_count": 1,
+                  "reduce_count": 0,
+                  "collect": 25450327,
+                  "collect_count": 401752
+                }
+              }
+            ]
+          },
+          {
+            "type": "GlobalOrdinalsStringTermsAggregator",
+            "description": "term_agg_feature",
+            "time_in_nanos": 256026952,
+            "breakdown": {
+              "reduce": 0,
+              "build_aggregation": 118206334,
+              "build_aggregation_count": 1,
+              "initialize": 2701,
+              "initialize_count": 1,
+              "reduce_count": 0,
+              "collect": 137416163,
+              "collect_count": 401752
+            },
+            "children": [
+              {
+                "type": "CardinalityAggregator",
+                "description": "uniq_by",
+                "time_in_nanos": 181788684,
+                "breakdown": {
+                  "reduce": 0,
+                  "build_aggregation": 511819,
+                  "build_aggregation_count": 13,
+                  "initialize": 132,
+                  "initialize_count": 1,
+                  "reduce_count": 0,
+                  "collect": 178065403,
+                  "collect_count": 3211316
+                }
+              }
+            ]
+          },
+          {
+            "type": "GlobalOrdinalsStringTermsAggregator",
+            "description": "term_agg_fuel_category",
+            "time_in_nanos": 62614720,
+            "breakdown": {
+              "reduce": 0,
+              "build_aggregation": 14595539,
+              "build_aggregation_count": 1,
+              "initialize": 2406,
+              "initialize_count": 1,
+              "reduce_count": 0,
+              "collect": 47615021,
+              "collect_count": 401752
+            },
+            "children": [
+              {
+                "type": "CardinalityAggregator",
+                "description": "uniq_by",
+                "time_in_nanos": 23333511,
+                "breakdown": {
+                  "reduce": 0,
+                  "build_aggregation": 136307,
+                  "build_aggregation_count": 4,
+                  "initialize": 152,
+                  "initialize_count": 1,
+                  "reduce_count": 0,
+                  "collect": 22795295,
+                  "collect_count": 401752
+                }
+              }
+            ]
+          },
+          {
+            "type": "GlobalOrdinalsStringTermsAggregator",
+            "description": "term_agg_fuel_hybrid_type",
+            "time_in_nanos": 33293932,
+            "breakdown": {
+              "reduce": 0,
+              "build_aggregation": 3202880,
+              "build_aggregation_count": 1,
+              "initialize": 2305,
+              "initialize_count": 1,
+              "reduce_count": 0,
+              "collect": 29686993,
+              "collect_count": 401752
+            },
+            "children": [
+              {
+                "type": "CardinalityAggregator",
+                "description": "uniq_by",
+                "time_in_nanos": 4583263,
+                "breakdown": {
+                  "reduce": 0,
+                  "build_aggregation": 85142,
+                  "build_aggregation_count": 3,
+                  "initialize": 113,
+                  "initialize_count": 1,
+                  "reduce_count": 0,
+                  "collect": 4415806,
+                  "collect_count": 82198
+                }
+              }
+            ]
+          },
+          {
+            "type": "GlobalOrdinalsStringTermsAggregator",
+            "description": "term_agg_transmission_category",
+            "time_in_nanos": 55645037,
+            "breakdown": {
+              "reduce": 0,
+              "build_aggregation": 13759627,
+              "build_aggregation_count": 1,
+              "initialize": 2289,
+              "initialize_count": 1,
+              "reduce_count": 0,
+              "collect": 41481367,
+              "collect_count": 401752
+            },
+            "children": [
+              {
+                "type": "CardinalityAggregator",
+                "description": "uniq_by",
+                "time_in_nanos": 22959172,
+                "breakdown": {
+                  "reduce": 0,
+                  "build_aggregation": 80262,
+                  "build_aggregation_count": 2,
+                  "initialize": 149,
+                  "initialize_count": 1,
+                  "reduce_count": 0,
+                  "collect": 22477006,
+                  "collect_count": 401752
+                }
+              }
+            ]
+          },
+          {
+            "type": "LongTermsAggregator",
+            "description": "term_agg_seats",
+            "time_in_nanos": 61793741,
+            "breakdown": {
+              "reduce": 0,
+              "build_aggregation": 14369210,
+              "build_aggregation_count": 1,
+              "initialize": 2258,
+              "initialize_count": 1,
+              "reduce_count": 0,
+              "collect": 47020519,
+              "collect_count": 401752
+            },
+            "children": [
+              {
+                "type": "CardinalityAggregator",
+                "description": "uniq_by",
+                "time_in_nanos": 22855171,
+                "breakdown": {
+                  "reduce": 0,
+                  "build_aggregation": 202691,
+                  "build_aggregation_count": 7,
+                  "initialize": 96,
+                  "initialize_count": 1,
+                  "reduce_count": 0,
+                  "collect": 22250624,
+                  "collect_count": 401752
+                }
+              }
+            ]
+          },
+          {
+            "type": "CardinalityAggregator",
+            "description": "collapsed_total",
+            "time_in_nanos": 28709992,
+            "breakdown": {
+              "reduce": 0,
+              "build_aggregation": 38202,
+              "build_aggregation_count": 1,
+              "initialize": 108,
+              "initialize_count": 1,
+              "reduce_count": 0,
+              "collect": 28269928,
+              "collect_count": 401752
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
